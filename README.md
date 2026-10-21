@@ -29,26 +29,6 @@ The patch does nothing on non-Android devices or devices without text-sharing su
 
 Keep the filename, including the `2-` prefix and `.lua` extension. To update, replace the existing file and restart KOReader. To uninstall, delete the file and restart.
 
-### Install using ADB
-
-With USB debugging enabled and your computer authorized on the device, run these commands from the folder containing the downloaded patch.
-
-PowerShell:
-
-```powershell
-adb shell mkdir -p /sdcard/koreader/patches
-adb push "2-share-external-link.lua" /sdcard/koreader/patches/
-```
-
-Git Bash on Windows:
-
-```bash
-MSYS_NO_PATHCONV=1 adb shell mkdir -p /sdcard/koreader/patches
-MSYS_NO_PATHCONV=1 adb push "2-share-external-link.lua" /sdcard/koreader/patches/
-```
-
-`MSYS_NO_PATHCONV=1` prevents Git Bash from rewriting the Android destination as a Windows path. Adjust the destination if your KOReader data folder is elsewhere, then restart KOReader.
-
 ## Storefront and App Store
 
 This public repository uses the **`koreader-user-patch`** topic and keeps its numbered Lua patch at the repository root for discovery and installation by community stores.
